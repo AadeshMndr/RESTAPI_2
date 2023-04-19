@@ -3,7 +3,7 @@ const app = express();
 
 const productsRouter = require("./api/routes/products");
 
-app.use("/products", productsRouter);
+// app.use("/products", productsRouter);
 
 app.get("/", (req, res, next) => {
     res.send("hello");
