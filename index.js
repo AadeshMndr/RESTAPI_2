@@ -30,7 +30,7 @@ app.get("/products", async (req, res, next) => {
     // // res.send(result);
     // res.status(200).json(result);
 
-    res.send("products");
+    res.status(200).json({text: "products"});
 });
 
 app.listen(3000, () => {
