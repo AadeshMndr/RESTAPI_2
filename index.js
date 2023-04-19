@@ -31,26 +31,6 @@ app.get("/products", async (req, res, next) => {
     res.status(200).json(result);
 });
 
-router.post("/", async (req, res, next) => {
-
-    const product = {
-        name: req.body.name,
-        price: req.body.price,
-    }
-
-    const client = await MongoClient.connect(URL);
-
-    const db = client.db("TheMainDB");
-
-    const collection = db.collection("products");
-
-    const result = await collection.insertOne(product);
-
-    client.close();
-
-    res.status(201).json("result: " + result);
-});
-
 app.listen(3000, () => {
   console.log("Running on port 3000.");
 });
