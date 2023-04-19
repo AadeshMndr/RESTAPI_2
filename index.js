@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 
-// const { MongoClient } = require("mongodb");
+const { MongoClient } = require("mongodb");
 
-// const URL = "mongodb+srv://admin:admin@nodetutorial.vmr3qt7.mongodb.net";
+const URL = "mongodb+srv://admin:admin@nodetutorial.vmr3qt7.mongodb.net";
 
 // const productsRouter = require("./api/products");
 
@@ -15,7 +15,7 @@ app.get("/", (req, res, next) => {
 
 app.get("/products", async (req, res, next) => {
 
-    // const client = await MongoClient.connect(URL);
+    const client = await MongoClient.connect(URL);
 
     // const db = client.db("TheMainDB");
 
