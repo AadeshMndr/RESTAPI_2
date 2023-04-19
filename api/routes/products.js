@@ -6,7 +6,7 @@ const { MongoClient } = require("mongodb");
 
 const URL = "mongodb+srv://admin:admin@nodetutorial.vmr3qt7.mongodb.net";
 
-router.get("/", async (req, res, next) => {
+router.get("/products", async (req, res, next) => {
 
     const client = await MongoClient.connect(URL);
 
