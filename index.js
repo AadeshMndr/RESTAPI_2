@@ -3,10 +3,14 @@ const app = express();
 
 const productsRouter = require("./api/routes/products");
 
-app.get("/products", productsRouter);
+app.use("/products", productsRouter);
 
-app.listen(5000, () => {
-  console.log("Running on port 5000.");
+app.get("/", (req, res, next) => [
+    res.send("hello")
+])
+
+app.listen(3000, () => {
+  console.log("Running on port 3000.");
 });
 // Export the Express API
 module.exports = app;
